@@ -1,13 +1,13 @@
-const http = require('http');
+const http = require("http");
 
-
-// Creating a server
-const server = http.createServer((request, response) => {
-  response.end('Response received at port 8080');
+const server = http.createServer((req, res) => {
+  res.write('I am a Ninja');
+  res.end();
 });
 
-server.listen(8080, () => {
-  console.log('Server is listening on port 8080');
+const port = 3001; // Change the port number
+server.listen(port, () => {
+  console.log(`Server is listening at port ${port}`);
 });
 
 module.exports = server;
